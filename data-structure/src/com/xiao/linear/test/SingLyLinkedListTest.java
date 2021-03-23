@@ -18,9 +18,13 @@ public class SingLyLinkedListTest {
         list.append("李四");
         list.append("王五");
         System.out.println(list);
+        System.out.println(list.isEmpty());
+        System.out.println(list.length());
         System.out.println(list.get(0));
         System.out.println(list.get(5));
         System.out.println(list.indexOf("王五"));
+        list.set(2,"赵六");
+        System.out.println(list);
     }
 
     @Test

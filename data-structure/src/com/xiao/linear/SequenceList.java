@@ -2,7 +2,7 @@ package com.xiao.linear;
 
 /**
  * @Classname: SequenceList
- * @Description: 顺序表实现
+ * @Description: 顺序表实现, 可扩容
  * @Date: 2021/3/9 22:35
  * @Author by kongx
  * @see com.xiao.linear.test.SequenceListTest 测试类
@@ -49,7 +49,7 @@ public class SequenceList<T> implements ListInterface<T> {
 
     @Override
     public T get(int i) {
-        if (i < 0 && i >= this.count) {
+        if (i < 0 || i >= this.count) {
             return null;
         }
         return this.eleArr[i];
@@ -60,7 +60,7 @@ public class SequenceList<T> implements ListInterface<T> {
         if (t == null) {
             return;
         }
-        if (i < 0 && i >= this.count) {
+        if (i < 0 || i >= this.count) {
             throw new IndexOutOfBoundsException(i + "索引非法!");
         }
         this.eleArr[i] = t;
@@ -142,7 +142,8 @@ public class SequenceList<T> implements ListInterface<T> {
      */
     @Override
     public String toString() {
-        String str = "(";
+
+        String str = "count=" + this.count + "(";
         if (this.count > 0) {
             str += this.eleArr[0].toString();
         }

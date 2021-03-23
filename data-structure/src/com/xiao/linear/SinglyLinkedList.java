@@ -70,7 +70,7 @@ public class SinglyLinkedList<T> implements ListInterface<T> {
         if (i < 0 || i >= length) {
             return null;
         }
-        // 找到头结点p
+        // 找到元首节点p
         Node<T> p = this.head.next;
         // p指向第i个结点
         for (int j = 0; j < i; j++) {
@@ -88,7 +88,7 @@ public class SinglyLinkedList<T> implements ListInterface<T> {
         if (i < 0 || i >= length) {
             throw new IndexOutOfBoundsException(i + "索引非法!");
         }
-        // 找到头结点p
+        // 找到元首节点p
         Node<T> p = this.head.next;
         // p指向第i个结点
         for (int j = 0; j < i; j++) {
@@ -174,15 +174,22 @@ public class SinglyLinkedList<T> implements ListInterface<T> {
 
     @Override
     public String toString() {
-        String str = "(";
+        String str = "length=" + this.length + "(";
         Node<T> pre = this.head;
         if (this.length > 0) {
             // 元首结点
             pre = pre.next;
             str += pre.data.toString();
+            str += ",next:" + pre.next.data.toString();
         }
         while (pre.next != null) {
-            str += "," + pre.next.data.toString();
+            str += "; " + pre.next.data.toString();
+            if (pre.next.next != null) {
+                str += ",next:" + pre.next.next.data.toString();
+            } else {
+                str += ",next:null";
+            }
+
             pre = pre.next;
         }
         return str + ")";
