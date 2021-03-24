@@ -1,23 +1,21 @@
 package com.xiao.linear.test;
 
-import com.xiao.linear.SequenceList;
+import com.xiao.linear.DoubleLinkedList;
 import org.junit.Test;
 
-/**
- * @Classname: SequenceListTest
- * @Description: 顺序表测试
- * @Date: 2021/3/9 23:39
- * @Author by kongx
- */
-public class SequenceListTest {
 
-    SequenceList<String> s1 = new SequenceList<>();
+/**
+ * @author KongXiao
+ * @date 2021/3/24
+ */
+public class DoubleLinkedListTest {
+    DoubleLinkedList<String> s1 = new DoubleLinkedList<>();
     @Test
     public void testGet(){
         s1.append("zhangsan");
         s1.append("lisi");
         s1.append("wangwu");
-        s1.set(2,"11");
+        s1.set(2,"赵六");
         System.out.println(s1);
         System.out.println(s1.isEmpty());
         System.out.println(s1.length());
@@ -49,5 +47,4 @@ public class SequenceListTest {
         s1.removeAll();
         System.out.println(s1);
     }
-
 }

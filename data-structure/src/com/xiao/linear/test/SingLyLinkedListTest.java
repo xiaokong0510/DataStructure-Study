@@ -45,8 +45,11 @@ public class SingLyLinkedListTest {
         list.append("lisi");
         list.append("wangwu");
         System.out.println(list);
-        list.remove(1);
+        System.out.println(list.remove(1));
         System.out.println(list);
+        list.removeAll();
+        System.out.println(list);
+
     }
 
 }
